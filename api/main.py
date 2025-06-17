@@ -71,3 +71,7 @@ def query_route(query: Query):
     answer = generate_answer_openrouter(query.question, top_chunks)
     links = list(set(chunk["source"] for chunk in top_chunks))
     return {"answer": answer, "links": links}
+if __name__ == "__main__":
+    import uvicorn
+    port = int(os.environ.get("PORT", 8000))  # fallback for local dev
+    uvicorn.run("api.main:app", host="0.0.0.0", port=port)
