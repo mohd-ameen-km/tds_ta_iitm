@@ -4,3 +4,4 @@ requests-html
 markdownify
 beautifulsoup4
 sentence-transformers
+python-dotenv
